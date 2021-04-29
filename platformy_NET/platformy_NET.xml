@@ -1,0 +1,564 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>platformy_NET</name>
+    </assembly>
+    <members>
+        <member name="T:platformy_NET.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:platformy_NET.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:platformy_NET.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:platformy_NET.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MainWindow.#ctor">
+            <summary>
+            Klasa inicjująca main window
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MainWindow.CloseButtonClick(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Klikniecie przycisku do zamykania programu
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:platformy_NET.MainWindow.MinimizeButtonClick(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Kliknięcie przycisku do minimalizowania okna
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:platformy_NET.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.DataBaseContext">
+            <summary>
+            Klasa generująca context bazy danych
+            </summary>
+        </member>
+        <member name="M:platformy_NET.Models.DataBaseContext.#ctor">
+            <summary>
+            Metoda ustalająca nazwe bazy danych i tworząca ją
+            </summary>
+        </member>
+        <member name="M:platformy_NET.Models.DataBaseContext.Create">
+            <summary>
+            Metoda do tworzenia nowego contextu bazy danych
+            </summary>
+            <returns>nowy obiekt typu Databasecontext</returns>
+        </member>
+        <member name="T:platformy_NET.Models.DataBaseService">
+            <summary>
+            Klasa przechowująca metody związane z obsługą bazy danych
+            </summary>
+        </member>
+        <member name="M:platformy_NET.Models.DataBaseService.#ctor">
+            <summary>
+            Konstruktor tworzący nowy element dbcontext do obsługi bazy danych
+            </summary>
+        </member>
+        <member name="M:platformy_NET.Models.DataBaseService.AddAlbum(platformy_NET.Models.SpotifyAlbum)">
+            <summary>
+            Dodaje element klasy album do bazy danych
+            </summary>
+            <param name="album">Obiekt typu album do dodania</param>
+        </member>
+        <member name="M:platformy_NET.Models.DataBaseService.AddArtist(platformy_NET.Models.SpotifyArtist)">
+            <summary>
+            Dodaje element klasy artist do bazy danych
+            </summary>
+            <param name="artist">Obiekt typu artist do dodania</param>
+        </member>
+        <member name="M:platformy_NET.Models.DataBaseService.AddTrack(platformy_NET.Models.SpotifyTrack)">
+            <summary>
+            Dodaje element klasy track do bazy danych
+            </summary>
+            <param name="track">Obiekt typu track do dodania</param>
+        </member>
+        <member name="M:platformy_NET.Models.DataBaseService.AddStatus(platformy_NET.Models.SocialStatus)">
+            <summary>
+            Dodaje element klasy status do bazy danych
+            </summary>
+            <param name="status">Obiekt typu status do dodania</param>
+        </member>
+        <member name="M:platformy_NET.Models.DataBaseService.GetStatus">
+            <summary>
+            Metoda zapisująca zawartość tabeli w bazie danych jak lista statusów
+            </summary>
+            <returns>Lista statusów reprezentująca baze danych</returns>
+        </member>
+        <member name="M:platformy_NET.Models.DataBaseService.GetAlbum">
+            <summary>
+            Metoda zwracająca albumy zapisane w bazie danych w postaci listy
+            </summary>
+            <returns>Lista reprezentująca albumy w bazie danych</returns>
+        </member>
+        <member name="M:platformy_NET.Models.DataBaseService.GetTrack">
+            <summary>
+            Metoda zwracająca liste utworów z bazy danych
+            </summary>
+            <returns>Lista reprezentująca utwory w bazie danych</returns>
+        </member>
+        <member name="M:platformy_NET.Models.DataBaseService.GetArtist">
+            <summary>
+            Metoda zwracająca artystów z bazdy danych i zapisująca je jako lista
+            </summary>
+            <returns>Lista reprezentująca artystów zapisanych w bazie danych</returns>
+        </member>
+        <member name="P:platformy_NET.Models.Helpers.SpotifySearch.token">
+            <summary>
+            Klasa odpowiedzialna za połączenie sie z API Spotify
+            </summary>
+        </member>
+        <member name="M:platformy_NET.Models.Helpers.SpotifySearch.GetTokenAsync">
+            <summary>
+            Metoda odpowiedzialana za autoryzowanie połączenia z Api
+            </summary>
+            <returns>token weryfikacji</returns>
+        </member>
+        <member name="M:platformy_NET.Models.Helpers.SpotifySearch.SearchArtist(System.String)">
+            <summary>
+            Metoda odpowiedzalna za wysłanie żądania wyszkania artysty,uwtoru,albumu do API Spotify
+            </summary>
+            <param name="searchWord">Szukana fraza</param>
+            <returns>zwraca zdeserializowany z JSONA obiekt wyszukiwania</returns>
+        </member>
+        <member name="T:platformy_NET.Models.SocialStatus">
+            <summary>
+            Klasa przechowująca parametry statusu społecznościowego
+            Id-idnetyfikator obiektu
+            DateTime - Data dodania
+            Status text - string przedstawiający treść statusu
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotifyAlbum">
+            <summary>
+            Klasa przechowująca parametry Albumu
+            ID - identyfikator albumu
+            Artist - autorzy albumu
+            Name - nazwa albumu
+            Image - Url do obrazu z Api przedstawiajacy okładke albumu
+            Release_Date - Data wydania
+            Popularity - popularność w % z serwisu spotify
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotifyArtist">
+            <summary>
+            Klasa przechowująca parametry artysty
+            Id -identyfikator artysty
+            Name - nazwa artysty
+            Image - Url do obrazu artysty z serwisu spotify
+            Followers - liczba obserwującychh w serwisie spotify
+            Popularity - %wartość popularności z serwisu spotify
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotifyTrack">
+            <summary>
+            Klasa przechowująca parametry utworu
+            ID - identyfikator utworu
+            Album - nazwa albumu w którym utwór się znajduje
+            Artist - wykonawcy utworu
+            Name - nazwa utworu
+            Popularity - % wartość popularności utworu w seriwisie spotify
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch">
+            <summary>
+            Klasa przechowująca obiekty z Api SPotify
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.ExternalUrls">
+            <summary>
+            Klasa przechowująca obiekty linki zewnętrzne
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.ExternalID">
+            <summary>
+            Klasa przechowująca zewnętrzne ID
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.Followers">
+            <summary>
+            Klasa przechowująca obserwujących
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.ImageSP">
+            <summary>
+            Klasa przechowująca obrazy
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.Copyright">
+            <summary>
+            Klasa przechowująca prawa autorskie
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.AlbumRestrictionObject">
+            <summary>
+            Klasa przechowująca restrykcje związane z albumami
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.LinkedTrackObject">
+            <summary>
+            Klasa przechowująca połączone utwory
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.TrackRestrictionObject">
+            <summary>
+            Klasa prezchowująca restrykcje związane z utworami
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.SimplifiedArtistObject">
+            <summary>
+            Klasa przechowująca uproszony obiekt artysty
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.SimplifiedTrackObject">
+            <summary>
+            Klasa przechowująca uproszony obiekt utwór
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.SimplifiedAlbumObject">
+            <summary>
+            Klasa przechowująca uproszony obiekt album
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.Artist">
+            <summary>
+            Klasa przechowująca obiekt Artysta
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.Artists">
+            <summary>
+            Klasa przechowująca obiekt artystów służąca do wyświetlania wyników wyszukiwania
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.Album">
+            <summary>
+            Klasa przechowujaca obiekt album
+            </summary>
+        </member>
+        <member name="M:platformy_NET.Models.SpotSearch.Album.GetArtists">
+            <summary>
+            Metoda łącząca nazwy artystów z listy w jednego stringa
+            </summary>
+            <returns>string z nazwami autorów</returns>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.Albums">
+            <summary>
+            Klasa przechowujaca obiekt albumów służąca do wyświetlania wyników wyszukiwania 
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.Track">
+            <summary>
+            Klasa przechowująca obiekt utwór
+            </summary>
+        </member>
+        <member name="M:platformy_NET.Models.SpotSearch.Track.GetArtists">
+            <summary>
+            Metoda łącząca nazwy artystów z listy w jednego stringa
+            </summary>
+            <returns>string z nazwami artystów</returns>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.Tracks">
+            <summary>
+            Klasa przechowuąca obiekt utworów służąca do wyświetlania wyników wyszukiwania
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.SpotSearch.SpotifyResult">
+            <summary>
+            Klasa przedstawiająca wynik wyszukiwania
+            </summary>
+        </member>
+        <member name="T:platformy_NET.Models.Token">
+            <summary>
+            Klasa przechowuje token autoryzacji do Api
+            acces_token - token dostepu do kona spotify
+            token_type -  typ tokenu
+            expires_in - liczba czasu kiedy token wygaśnie
+            </summary>
+        </member>
+        <member name="T:platformy_NET.MWM.ViewModel.MainViewModel">
+            <summary>
+            Klasa przedstawiająca główne okno programu
+            </summary>
+        </member>
+        <member name="P:platformy_NET.MWM.ViewModel.MainViewModel.CurrentView">
+            <summary>
+            Obiekt do zmiany widoku okna 
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.ViewModel.MainViewModel.#ctor">
+            <summary>
+            Funkcja tworząca widoki w głownym oknie programu oraz komendy do zmieniania widoku
+            </summary>
+        </member>
+        <member name="T:platformy_NET.MWM.View.AddYourStatus">
+            <summary>
+            Logika interakcji dla klasy AddYourStatus.xaml
+            </summary>
+            <summary>
+            AddYourStatus
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.AddYourStatus.#ctor">
+            <summary>
+            Klasa inicjalizująca okno
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.AddYourStatus.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Działanie przycisku Button1 zapisuje dane z TextBoxa do bazy danych z odpowiadająca jej datą, po wykonaniu zamyka okno
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:platformy_NET.MWM.View.AddYourStatus.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:platformy_NET.MWM.View.AlbumView">
+            <summary>
+            Logika interakcji dla klasy AlbumView.xaml
+            </summary>
+            <summary>
+            AlbumView
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.AlbumView.#ctor">
+            <summary>
+            Funkcja inicjalizująca okno
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.AlbumView.TxtBox1_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Funkcja odpowiedzialna za wypełnianie ListBoxa danymi odpowiadającymi TextBoxowi
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:platformy_NET.MWM.View.AlbumView.ListBoxAlbum_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Funkcja odpowiadająca za dodanie utworu do bazy danych po double-clicku
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:platformy_NET.MWM.View.AlbumView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:platformy_NET.MWM.View.ArtistView">
+            <summary>
+            Logika interakcji dla klasy ArtistView.xaml
+            </summary>
+            <summary>
+            ArtistView
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.ArtistView.#ctor">
+            <summary>
+            Klasa inicjalizująca okno
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.ArtistView.TxtBox1_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Funkcja odpowiedzialna za wypełnianie ListBoxa danymi odpowiadającymi TextBoxowi
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:platformy_NET.MWM.View.ArtistView.ArtistListBox_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Funkcja odpowiadająca za dodanie artysty do bazy danych po double-clicku
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:platformy_NET.MWM.View.ArtistView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:platformy_NET.MWM.View.FeedView">
+            <summary>
+            Logika interakcji dla klasy FeedView.xaml
+            </summary>
+            <summary>
+            FeedView
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.FeedView.#ctor">
+            <summary>
+            klasa odpowiadająca za inicjalizacje okna społecznośći
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.FeedView.Update">
+            <summary>
+            Funkcja odświeżająca ListBoxa ze statusami
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.FeedView.DataListBox_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Funkcja która po double-clicku usuwa dany element z bazy danych
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:platformy_NET.MWM.View.FeedView.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Funkcja przedstawiająca działanie przycisku, otwiera nowe okno AddYourStatus
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:platformy_NET.MWM.View.FeedView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:platformy_NET.MWM.View.HomeView">
+            <summary>
+            Logika interakcji dla klasy HomeView.xaml
+            </summary>
+            <summary>
+            HomeView
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.HomeView.#ctor">
+            <summary>
+            Klasa odpowiadająca za zaincjalizowanie okna
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.HomeView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:platformy_NET.MWM.View.LibraryView">
+            <summary>
+            Logika interakcji dla klasy LibraryView.xaml
+            </summary>
+            <summary>
+            LibraryView
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.LibraryView.#ctor">
+            <summary>
+            Funkcja inicjalizująca okno oraz przypisanie ItemSoruce do listboxów
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.LibraryView.ArtistListBox_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Funkcja odpowiadająca za usunięcie artysty z bazy danych po double-clicku itemu w listboxie
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:platformy_NET.MWM.View.LibraryView.ListBoxAlbum_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Funkcja odpowiadająca za usunięcie albumu z bazy danych po double-clicku itemu w listboxie
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:platformy_NET.MWM.View.LibraryView.ListBoxSong_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Funkcja odpowiadająca za usunięcie utworu z bazy danych po double-clicku itemu w listboxie
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:platformy_NET.MWM.View.LibraryView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:platformy_NET.MWM.View.SongView">
+            <summary>
+            Logika interakcji dla klasy SongView.xaml
+            </summary>
+            <summary>
+            SongView
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.SongView.#ctor">
+            <summary>
+            Klasa inicjalizująca okno
+            </summary>
+        </member>
+        <member name="M:platformy_NET.MWM.View.SongView.TxtBox1_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)">
+            <summary>
+            Funkcja odpowiadająca za wypełnianie ListBoxa
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:platformy_NET.MWM.View.SongView.ListBoxSong_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Funkcja która po double-click na elemencie w listBoxie dodaje go do bazy danych(biblioteki)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:platformy_NET.MWM.View.SongView.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>
