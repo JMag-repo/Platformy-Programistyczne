@@ -1,8 +1,6 @@
 # Platformy-Programistyczne
-School Project 
+WPF application to search and store informations about artists, albums and songs. 
+The application uses a connection to the spotify API to get information and allows the user to save it to the database. 
+Database was created and maintained with Entity Framework Code First approach 
 
-Aplikacja napisana w ramach projektu Platfromy programistyczne .Net i Java na politechnice Wrocławskiej
 
-Aplikacja przedstawia biblioteke multimediów wykorzystuje API Spotify, oferuje zapisywanie utworów, artystów i albumów w bazie danych.
-
-Aplikacja została napisana w języku C# wykorzystując WPF i Entity Framework
